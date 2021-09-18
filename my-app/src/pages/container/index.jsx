@@ -7,13 +7,13 @@ import {
   Redirect,
 } from "react-router-dom";
 import Header from "../../components/header/header";
-import Home from "../../components/home/home";
-import Plan from "../../components/plans/plan";
-import { About } from "../../components/aboutUs/about";
 import LoginForm from "../../components/login/login";
 import Register from "../../components/register/register";
 import RegisterPge from "../login/register";
 import LoginPage from "../login/login";
+import Profile from '../profile';
+import ReadLater from '../readlater';
+import Home from '../home';
 const Dashbord = () => {
   const history = useHistory();
   const [redirect, setRedirect] = useState(false);
@@ -33,11 +33,9 @@ const Dashbord = () => {
       </div>
 
       <Switch>
-        <Route path="/plan" component={ Plan } exact={ true } />
-        <Route path="/about" component={ About } exact={ true } />
-        <Route path="/register" component={ RegisterPge } exact={ true } />
+        <Route path="/profile" component={ Profile } exact={ true } />
+        <Route path="/readlater" component={ ReadLater } exact={ true } />
         <Route path="/" component={ Home } exact={ true } />
-        {/* <Route path="/login" component={ LoginPage } exact={ true } /> */ }
       </Switch>
     </BrowserRouter>
   );
