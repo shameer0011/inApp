@@ -10,7 +10,7 @@ export const ReadLater = (props) => {
     const { readlaterList } = props;
     const dispatch = useDispatch();
     const [result, setResult] = useState(null);
-    const readLaterhandler = (data) => {
+    const removeHandler = (data) => {
         console.log("datata", data)
         dispatch(removeReadLaterItem(data.title))
 
@@ -30,7 +30,7 @@ export const ReadLater = (props) => {
 
     return (
         <div>
-            { result && <ArticlesList result={ result } readLaterhandler={ readLaterhandler } /> }
+            { result && <ArticlesList result={ result } removeHandler={ removeHandler } /> }
         </div>
     )
 }
