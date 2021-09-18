@@ -11,7 +11,7 @@ import {
   Toolbar,
   Link,
 } from "@material-ui/core";
-const LoginForm = ({ onSubmits }) => {
+const LoginForm = ({ onSubmits, userError }) => {
   const [inputField, setInputField] = useState({
     name: "",
     password: "",
@@ -39,6 +39,7 @@ const LoginForm = ({ onSubmits }) => {
       setError(false);
       onSubmits(order);
     }
+
     // if (order.name && order.password) {
     //   errorMessage.map((i) => {
     //     if (i.username !== order.name) {
@@ -48,6 +49,7 @@ const LoginForm = ({ onSubmits }) => {
     //     }
     //   });
     // }
+
   };
 
   return (
@@ -133,6 +135,10 @@ const LoginForm = ({ onSubmits }) => {
               ) : (
                 ""
               ) }
+              { userError && <span style={ { color: "red" } }>
+                { " " }
+                User doesn't exist!
+              </span> }
             </Paper>
           </Grid>
           <div>
